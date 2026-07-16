@@ -56,7 +56,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,210,31,.12);border:1px solid rgba(255,210,31,.35);color:var(--yellow);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700}
 .hero h1{font-size:clamp(32px,4.6vw,54px);margin:18px 0 14px;font-weight:800}
-.hero h1 mark{background:linear-gradient(transparent 62%,var(--yellow) 62%);color:#fff;padding:0 4px}
+.hero h1 mark{background:transparent;color:#fff;padding:0}
 .hero p{color:#c9c5b8;font-size:17px;max-width:520px;margin:0 0 28px}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
 .hero-cta .btn{padding:15px 26px;font-size:16px}
@@ -73,11 +73,6 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .hero-brief div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed #2e2e2e}
 .hero-brief b{color:#fff;font-weight:600}
 .hero-brief .hl b{color:var(--yellow);font-family:var(--font-head);font-size:17px}
-
-/* ---------- Marquee ---------- */
-.marquee{background:var(--yellow);color:#111;overflow:hidden;padding:12px 0;border-top:3px solid #111;border-bottom:3px solid #111}
-.marquee-track{display:flex;gap:40px;white-space:nowrap;font-family:var(--font-head);font-weight:700;font-size:15px;animation:scroll 26s linear infinite;width:max-content}
-@keyframes scroll{to{transform:translateX(-50%)}}
 
 /* ---------- Sections ---------- */
 .block{padding:72px 0}
@@ -205,7 +200,7 @@ footer a{color:var(--yellow);text-decoration:none}
   .hero-points{gap:18px}
 }
 @media print{
-  .topbar,.hero,.marquee,.block,.bigcta,footer,.main,.actions,.edit-toggle,.toast,.overlay{display:none!important}
+  .topbar,.hero,.block,.bigcta,footer,.main,.actions,.edit-toggle,.toast,.overlay{display:none!important}
   body{background:#fff}
   .layout{display:block;padding:0}
   .rightbox{position:static;box-shadow:none;border:0}
@@ -273,13 +268,6 @@ footer a{color:var(--yellow);text-decoration:none}
     </div>
   </div>
 </section>
-
-<!-- ================= MARQUEE ================= -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>POP</span><span>✦</span><span>ACOUSTIC</span><span>✦</span><span>HIP HOP</span><span>✦</span><span>ROCK</span><span>✦</span><span>R&amp;B</span><span>✦</span><span>ELECTRONIC</span><span>✦</span><span>JINGLE</span><span>✦</span><span>SOUND LOGO</span><span>✦</span><span>BRAND SONG</span><span>✦</span>
-  </div>
-</div>
 
 <!-- ================= HOW IT WORKS ================= -->
 <section class="block" id="how">
@@ -839,7 +827,6 @@ stepMap.forEach(([id])=>{const el=document.getElementById(id);if(el)io.observe(e
 
 /* ---------- Misc ---------- */
 $('year').textContent=new Date().getFullYear();
-$('marqueeTrack').innerHTML+=$('marqueeTrack').innerHTML; // ทำให้ marquee ต่อเนื่อง
 
 restore();update(false);
 </script>
